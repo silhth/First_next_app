@@ -1,0 +1,19 @@
+.title {
+    text-align: center;
+}
+.Gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div {
+        margin: 10px;
+        padding: 15px;
+        background: rgb(228, 228, 227);
+        box-shadow: 2px 2px 3px rgb(177, 177, 177);
+        &:hover {
+            transform: scale(1.1); 
+            
+        }
+    }
+}
