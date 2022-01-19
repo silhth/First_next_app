@@ -2,10 +2,10 @@ import style from "./Carosel.module.scss";
 
 import { useRef } from "react";
 
-import { ImgCarosel } from "../ImgCarosel";
 
 
-const Carosel =({arr, left, right, width, comp}) => {
+
+const Carosel =({ left, right, width, comp}) => {
 
     const caroselRef = useRef()
     const slideImg = (dir) => 
@@ -13,6 +13,7 @@ const Carosel =({arr, left, right, width, comp}) => {
     console.log(caroselRef.current.scrollLeft)}
     
     return (
+        
         <div className={style.Carosel} style={{width: width}}>
             <div ref= {caroselRef}>
                 {/* {arr.map((img, index)=><img src={img} key= {index} alt="photo"/>)} */}
@@ -21,6 +22,7 @@ const Carosel =({arr, left, right, width, comp}) => {
             <button onClick={() => slideImg("left")}>{'<'}</button>
             <button onClick={() => slideImg("right")}>{'>'}</button>
         </div>
+       
 
     )
 }

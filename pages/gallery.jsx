@@ -4,6 +4,10 @@ import Image from "next/image";
 import Layout from "../components/Layaout"
 import style from '../styles/Gallery.module.scss'
 import Loading from "../components/Loading";
+import styled from "styled-components";
+
+const P =styled.p `
+color: rgb(136,136,136);`
 
 export default function Gallery () {
     const [productList, setProductList] = useState([]);
@@ -21,7 +25,7 @@ export default function Gallery () {
         {productList.length ? (
           productList.map((product) => (
             <div key={product.title}>
-              <p>{product.category}</p>
+              <P>{product.category}</P>
               <Image
                 src={product.image}
                 alt={product.title}
