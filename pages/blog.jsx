@@ -10,8 +10,8 @@ const H1 = styled.h1`
 width: 55%;
 text-align: center;
 margin: 20px auto;
-background: ${({theme})=> theme.body};
-color: ${({theme})=> theme.text}
+color: ${({theme})=> theme.text};
+transition: 0.5s;
 `
 
 
@@ -29,6 +29,7 @@ export default function blog () {
 
     return(
         <Layout>
+      
             <H1>BLOG</H1>
         {todos.length? todos.map((todo)=>
             <Article title = {todo.title} 
@@ -41,7 +42,7 @@ export default function blog () {
                      sunt in culpa qui officia deserunt mollit anim id est laborum." key = {todo.id}/>)
         : <Loading/>
         }
-        
+       
         </Layout>
         
     )

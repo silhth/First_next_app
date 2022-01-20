@@ -1,7 +1,7 @@
 .Footer {
     width: 100%;
-    position: static;
-    bottom: 0vh;
+    position: absolute;
+    bottom: 0;
     margin-top: 50px;
     padding: 50px;
 
@@ -9,5 +9,6 @@
     color: white;
 
     text-align: center;
+    z-index: 1;
     
 }

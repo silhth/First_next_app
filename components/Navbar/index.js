@@ -1,7 +1,8 @@
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import style from "./Navbar.module.scss";
+import { useRouter } from 'next/router'
 
 // export default function Navbar () {
 //     return (
@@ -35,46 +36,40 @@ import style from "./Navbar.module.scss";
     
 // }
 
+const NavBarElement = [
+    { pathname: "/",
+    page: 'HOME' },
+    { pathname: "/gallery",
+    page: 'GALLERY' },
+    { pathname: "/carosel",
+    page: 'CAROSEL' },
+    { pathname: "/blog",
+    page: 'BLOG' },
+    { pathname: "/particlesTheme",
+    page: 'PARTICLES' }
+
+    
+
+]
+
 
 export default function Navbar () {
 
-    // const [classType, setClassType]= useState('')
-    // const CheckActive = () => {
-    //     setClassType(style.activeBTN);
-    //     console.log(classType)
-    // }
+    const router = useRouter()
+
 
     return (
         <div className={style.Navbar}>
                 <div></div>
-                
-                <Link href="/">
-                <button >
-                <a>HOME</a>
-                </button>
-                </Link>
-                
-                
-                <Link href="/gallery">
-                <button>
-                <a>GALLERY</a>
-                </button>
-                </Link>
-                
-                
-                <Link href="/carosel">
-                <button >
-                <a>CAROSEL</a>
-                </button>
-                </Link>
-                
-               
-                <Link href="/blog">
-                <button>
-                <a>BLOG</a>
-                </button>
-                </Link>
-               
+
+                {NavBarElement.map((Element, index)=>(
+                    
+                    <Link href={Element.pathname} key={index}>
+                    <button className={router.pathname === Element.pathname ? style.active: ''}>
+                    <a>{Element.page}</a>
+                    </button>
+                    </Link>
+                ))}      
                 
             
         </div>

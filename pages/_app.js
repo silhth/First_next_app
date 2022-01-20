@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import styled, {ThemeProvider } from "styled-components"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 const darkTheme = {
@@ -25,27 +25,35 @@ const ToggleBtn = styled.button`
   transition: 0.5s;
 `
 
-const Body = styled.body`
+const SubBody = styled.div`
   color:${({theme})=> theme.text};
   background-color: ${({theme})=> theme.body};
+  transition: 0.5s;
 
 `
 
 function MyApp({ Component, pageProps }) {
 
   const [theme, setTheme] =useState('light')
-  
-  const toggleTheme = () => {
-    theme === "light"? setTheme ("dark") : setTheme ("light");
-    console.log(theme)}
+  const [isMounted, setIsMounted] = useState(false)
+
+  const toggleTheme = () => 
+      theme === "light"? setTheme ("dark") : setTheme ("light");
+
+  useEffect(() =>{
+    setIsMounted(true)
+  }, [])
+
+    
 
   return (
-    <ThemeProvider theme= {theme === 'light'? lightTheme : darkTheme} >
-      <Body>
+
+    
+   <ThemeProvider theme= {theme === 'light'? lightTheme : darkTheme} >
+      {isMounted && <SubBody>
       <ToggleBtn onClick={toggleTheme}>{theme}</ToggleBtn>
       <Component {...pageProps} />
-      </Body>
-      
+      </SubBody>}  
     </ThemeProvider>
  
   )

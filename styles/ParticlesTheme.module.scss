@@ -1,0 +1,27 @@
+.wrapper {
+    position: absolute;
+    z-index: 0;
+}
+.panel {
+    position: absolute;
+    left: 40%;
+    top: 20;
+    width: 20%;
+    height: 40%;
+    background: white;
+    z-index: 2;
+    background: rgb(209, 209, 209);
+
+    label {
+        display: block;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    input{
+        
+        display: block;
+        margin: 10px auto;
+    }
+
+  }

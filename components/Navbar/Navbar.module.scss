@@ -1,35 +1,10 @@
-// .Navbar {
-//     margin: 50px 0;
-//     ul {
-//     background: rgb(136,136,136);
-//     color: white;
-//     text-align: center;
 
-//     li{
-//         display: inline;
-//         margin: 10px;
-//         padding: 10px;
-//         background: rgb(200, 200, 200);
-//         transition: all 0.3s ease-in-out;
-//         &:hover{
-//             padding: 12px;
-//             font-size: large;
-//             background: rgb(182, 181, 181);
-//         }
-//         &:active{
-//             padding: 12px;
-//             font-size: large;
-//             background: rgb(182, 181, 181);
-//         }
-//     }
-   
-// }
-// }
 .Navbar {
     position: relative;
     margin: 50px 0;
     width: 100%;
     text-align: center;
+    z-index: 1;
    
     div{
         position: absolute;
@@ -37,6 +12,7 @@
         top: 45%;
         height: 10%;
         background-color: rgb(122, 122, 122);
+        
        
     }
     button{
@@ -49,15 +25,17 @@
         background: rgb(168, 168, 168);
         transition: all 0.3s ease-in-out;
         
+        
         &:hover{
             cursor: pointer;
-            transform: scale(1.2);
+            transform: scale(0.9);
             background: rgb(122, 122, 122);
         }
-        &.activeBTN{
+        &.active{
             transform: scale(1.2);
             background: rgb(122, 122, 122);  
         }
     }
    
 }
+
