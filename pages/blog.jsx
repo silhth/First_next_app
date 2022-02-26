@@ -15,7 +15,7 @@ transition: 0.5s;
 `
 
 
-export default function blog () {
+export default function Blog () {
 
     const [todos, setTodos] = useState ([])
 
