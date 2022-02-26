@@ -6,7 +6,7 @@ import { useState } from 'react';
 import style from '../styles/ParticlesTheme.module.scss'
 
 
-export default function particlesTheme() {
+export default function ParticlesTheme() {
   const particlesInit = (main) => {
     console.log(main);
 
