@@ -1,6 +1,7 @@
 {
   "name": "my-next-app",
   "private": true,
+  "homepage": "https://silhth.github.io/my_first_next_app/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
