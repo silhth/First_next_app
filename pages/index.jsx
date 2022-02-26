@@ -8,7 +8,7 @@ export default function Home() {
     <Layout>
       <div className={style.Home}>
         <h1> Il mio primo progetto in Next.js </h1>
-        <Image  src="https://picsum.photos/id/305/200"
+        <Image  src="https://picsum.photos/200/300"
             alt="hero image"
             width="400"
             height="400"
